@@ -1,5 +1,5 @@
 (function(){
     'use strict';
     angular
-        .module('blogApp', ['ui.router']);
+        .module('blogApp', ['ui.router', 'ngMaterial']);
 })();
