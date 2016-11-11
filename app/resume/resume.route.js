@@ -5,14 +5,14 @@
         .module('blogApp')
         .config(function ($stateProvider) {
             $stateProvider
-                .state('home.landing', {
-                    url: "",
-                    templateUrl: "app/landing/landing.html",
-                    controller: 'LandingController',
-                    controllerAs: 'landCtrl',
+                .state('home.resume', {
+                    url: "resume",
+                    templateUrl: "app/resume/resume.html",
+                    controller: 'ResumeController',
+                    controllerAs: 'resCtrl',
                     resolve:{
                         nav:['$rootScope', function($rootScope){
-                            $rootScope.currentNavItem = 'landing'
+                            $rootScope.currentNavItem = 'resume'
                         }]
                     }
                 })
