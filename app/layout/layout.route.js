@@ -7,9 +7,9 @@
             $urlRouterProvider.otherwise("/");
             $stateProvider
                 .state('home', {
-                    url: "",
+                    url: "/",
                     abstract: true,
-                    templateUrl: "/app/layout/layout.html",
+                    templateUrl: "app/layout/layout.html",
                     controller: 'LayoutController',
                     controllerAs: 'layCtrl'
                 })
