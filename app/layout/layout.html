@@ -1,27 +1,65 @@
-<div flex class="" layout="column" layout-align="start stretch" layout-margin layout-padding style="background-color:white;">
+<div flex class="" layout="column" layout-align="start stretch" layout-padding>
 
     <!--Banner saction-->
-    <div class="" flex="none" style="background-color:red">
-        <h1>Banner</h1>
-    </div>
+
+    <header layout="row" layout-align="start center" md-colors="{color: 'yellow-A400', 'background': 'green-300'}">
+        <div class="">
+            <img src="/img/avatar.jpg" alt="" class="user-avatar">
+        </div>
+        <div layout="column" layout-align="center center" flex>
+            <h1>md atiqul islam</h1>
+        </div>
+    </header>
+
+
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="Navigation Menu" class="md-whiteframe-8dp">
+        <md-nav-item md-nav-sref="{{item.url}}" name="{{item.id}}" aria-label="{{item.ariaLabel}}" ng-repeat="item in layCtrl.navMenu">{{item.name}}</md-nav-item>
+    </md-nav-bar>
     <!--Inner content-->
 
-    <div flex class="" layout="row" style="background-color:yellow" layout-margin layout-padding >
-        <!--Side pane-->
-        <div class="" flex="20" style="background-color:blue">
-            Side pane
-
-        </div>
+    <div flex layout="column" class="md-whiteframe-4dp">
         <!--Main Content-->
-        <div class="" flex style="background-color:purple">
-            Main content
-
+        <md-content flex layout-padding>
             <ui-view></ui-view>
-        </div>
+        </md-content>
     </div>
     <!--Footer saction-->
-    <div class="" flex="nogrow" style="background-color:green">
-        <h1>Footer</h1>
-    </div>
+    <footer class="md-whiteframe-14dp" layout-margin layout-padding layout="row" layout-align="space-between center" flex="nogrow"
+        md-colors="{color: 'deep-orange', 'background': 'grey-A200'}">
+        <div class="" flex="66" layout="row" layout-align="start">
+            <md-list>
+                <md-list-item class="md-line">
+                    <md-icon aria-label="mail">
+                        <a href="mailto:atiqul.islam1589@gmail.com">
+                            <ng-md-icon icon="email" style="fill:red"></ng-md-icon>
+                        </a>
+                    </md-icon>
+                    <div class="md-list-item-text">
+                        <md-button href="mailto:atiqul.islam1589@gmail.com">atiqul.islam1589@gmail.com</md-button>
+                    </div>
+                </md-list-item>
+                <md-list-item>
+                    <md-icon aria-label="mail">
+                        <a href="mailto:atiqul.islam1589@gmail.com">
+                            <ng-md-icon icon="phone" style="fill:red"></ng-md-icon>
+                        </a>
+                    </md-icon>
+                    <div class="md-list-item-text">
+                        <md-button href="tel:+8801675392131">+880 1675 39 2131 </md-button>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </div>
+        <div class="" flex="33">
+
+            <a href="//github.com/atiq1589" target="_blank">
+                <ng-md-icon icon="github-circle" style="fill: red" size="28"></ng-md-icon>
+            </a>
+            <a href="//bd.linkedin.com/in/atiq1589" target="_blank">
+                <ng-md-icon icon="linkedin" style="fill: red" size="28"></ng-md-icon>
+            </a>
+        </div>
+
+    </footer>
 
 </div>
