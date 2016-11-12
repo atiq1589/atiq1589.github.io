@@ -15,7 +15,7 @@
             contactInfos: [
                 {
                     type: 'Email',
-                    info: 'maileto:atiqul.islam1589@gmail.com',
+                    info: 'mailto:atiqul.islam1589@gmail.com',
                     icon: 'email',
                     display: 'atiqul.islam1589@gmail.com'
 
