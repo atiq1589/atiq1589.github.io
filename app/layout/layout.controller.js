@@ -25,5 +25,7 @@
             ariaLabel: 'Resume'
         }]
         vm.myGitRepos = [];
+
+        vm.footerUrl = 'app/layout/partials/footer.html';
     }
 })();
