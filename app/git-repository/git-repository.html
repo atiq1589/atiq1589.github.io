@@ -1,34 +1,31 @@
 <div class="" layout="column" layout-align="start">
-    <!--<input type="int" ng-model="pageLimit">-->
     <md-toolbar md-colors="ThemeColor.ListToolBarColor">
         <div class="md-toolbar-tools">
             <span>Git repo</span>
+            <span flex></span>
+            <md-button id="nextButton" class="md-raised" aria-label="button-label" ng-disabled="page == 0" ng-click="page = (page > 0)? page - 1: 0">
+                Prev </md-button>
+            <md-button id="nextButton" class="md-raised" aria-label="button-label" ng-disabled="((page + 1) * pageLimit) >=repoCtrl.userRepoList.length"
+                ng-click="page = ((page + 1) * pageLimit <repoCtrl.userRepoList.length)? page + 1: page">
+                Next </md-button>
         </div>
     </md-toolbar>
-
     <md-list flex ng-init="page=0">
-        <md-list-item class="md-2-line" ng-repeat="repoItem in repoCtrl.userRepoList | limitTo:pageLimit:pageLimit*page" ng-click="null">
-            <span class="md-avatar">{{ (page * pageLimit) + $index + 1}}</span>
-            <!--<img ng-src="{{repoItem.image}}?{{$index}}" class="md-avatar" alt="{{repoItem.image}}" />-->
-            <div class="md-list-item-text" ng-init="fabIsOpen=false">
-                <h3><a href="{{repoItem.html_url}}" target="_blank">{{repoItem.name}}</a></h3>
+        <md-list-item class="md-2-line" ng-repeat="repoItem in repoCtrl.userRepoList | limitTo:pageLimit:pageLimit*page">
+            <div class="md-list-item-text" ng-init="fabIsOpen=false" layout="column" layout-padding>
+                <h3>{{repoItem.name | uppercase}}</h3>
                 <p>{{repoItem.description}}</p>
                 <md-fab-speed-dial md-open="fabIsOpen" md-direction="left" class="md-scale md-secondary">
                     <md-fab-trigger>
-                        <md-button aria-label="menu" class="md-fab md-primary">
-                            <md-icon>
-                                <ng-md-icon icon="reorder"></ng-md-icon>
-                            </md-icon>
+                        <md-button aria-label="menu" class="md-fab" md-colors="{{ThemeColor.FabButtonColor}}">
+                            <md-icon>menu</md-icon>
                         </md-button>
                     </md-fab-trigger>
 
                     <md-fab-actions>
-                        <md-button aria-label="Add User" class="md-warn">
-                            <a href="{{repoItem.html_url}}/issues" target="_blank">
-                                <md-icon>
-                                    <ng-md-icon icon="info_outline"></ng-md-icon>
-                                </md-icon>
-                            </a>
+                        <md-button aria-label="Add User" class="md-fab md-raised md-mini" md-colors="{{ThemeColor.FabChildColor}}" href="{{repoItem.html_url}}"
+                            target="_blank">
+                            <md-icon>info</md-icon>
                         </md-button>
                     </md-fab-actions>
                 </md-fab-speed-dial>
@@ -36,9 +33,4 @@
             <md-divider></md-divider>
         </md-list-item>
     </md-list>
-    <div flex class="" ng-show="repoCtrl.userRepoList.length">
-        <md-button id="nextButton" class="md-raised" aria-label="button-label" ng-click="page = (page > 0)? page - 1: 0"> Prev </md-button>
-        <md-button id="nextButton" class="md-raised" aria-label="button-label" ng-click="page =( (page + 1) * pageLimit < repoCtrl.userRepoList.length )? page + 1: page">
-            Next </md-button>
-    </div>
 </div>
