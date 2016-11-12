@@ -8,7 +8,6 @@
 
     function GitRepositoryController(GitRepositoryService, $rootScope) {
         var vm = this;
-        $rootScope.pageLimit = 10;
-        vm.userRepoList = GitRepositoryService.gitUserRepoList.query({username:'atiq1589'});
+        vm.userRepoList = GitRepositoryService.gitUserRepoList.query({ username: 'atiq1589' });
     }
 })();

@@ -11,6 +11,11 @@
             name: 'Home',
             url: 'home.landing',
             ariaLabel: 'Home'
+        },{
+            id: 'projects',
+            name: 'Projects',
+            url: 'home.project-list',
+            ariaLabel: 'Projects'
         }, {
             id: 'git-repo',
             name: 'My Git Repository',
