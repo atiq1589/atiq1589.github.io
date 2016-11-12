@@ -7,6 +7,8 @@
 
             $rootScope.ThemeColor = {};
 
-            $rootScope.ThemeColor["ListToolBarColor"] = {color: 'deep-orange', 'background': 'cyan-800'};
+            $rootScope.ThemeColor["HeaderColor"] = {color: 'yellow-A400', 'background': 'green-300'};
+            $rootScope.ThemeColor["ListToolBarColor"] = {color: 'red-50', 'background': 'green-300'};
+            $rootScope.ThemeColor["FooterColor"] = {color: 'deep-orange', 'background': 'grey-A200'};
         }]);
 })();
