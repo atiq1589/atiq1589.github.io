@@ -6,25 +6,6 @@
 
     function LayoutController() {
         var vm = this;
-        vm.navMenu = [{
-            id: 'landing',
-            name: 'Home',
-            url: 'home.landing',
-            ariaLabel: 'Home'
-        }, {
-            id: 'git-repo',
-            name: 'My Git Repository',
-            url: 'home.git-repo',
-            ariaLabel: 'Git Repository'
-
-        },
-        {
-            id: 'resume',
-            name: 'Resume',
-            url: 'home.resume',
-            ariaLabel: 'Resume'
-        }]
-
         vm.footerUrl = 'app/layout/partials/footer.html';
         vm.headerUrl = 'app/layout/partials/header.html';
 
@@ -34,7 +15,7 @@
             contactInfos: [
                 {
                     type: 'Email',
-                    info: 'maileto:atiqul.islam1589@gmail.com',
+                    info: 'mailto:atiqul.islam1589@gmail.com',
                     icon: 'email',
                     display: 'atiqul.islam1589@gmail.com'
 
