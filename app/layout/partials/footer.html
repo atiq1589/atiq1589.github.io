@@ -1,0 +1,22 @@
+<footer class="md-whiteframe-14dp" layout-padding layout="row" layout-align="space-between center" flex="none" md-colors="{color: 'deep-orange', 'background': 'grey-A200'}">
+    <div flex="66" layout="row" layout-align="center">
+        <md-list>
+            <md-list-item ng-repeat="contact in layCtrl.User.contactInfos">
+                <md-icon aria-label="{{contact.name}}">
+                    <a href="{{contact.info}}">
+                        <ng-md-icon icon="{{contact.icon}}" style="fill:red"></ng-md-icon>
+                    </a>
+                </md-icon>
+                <div class="md-list-item-text">
+                    <md-button href="{{contact.info}}">{{contact.display}}</md-button>
+                </div>
+            </md-list-item>
+        </md-list>
+    </div>
+    <div flex="33">
+        <a href="{{social.url}}" target="_blank" ng-repeat="social in layCtrl.User.socialLinks">
+            <ng-md-icon icon="{{social.logo}}" style="fill: red" size="28"></ng-md-icon>
+        </a>
+    </div>
+
+</footer>

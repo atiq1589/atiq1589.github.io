@@ -5,7 +5,6 @@
         .controller('LandingController', LandingController);
 
     function LandingController(){
-                console.log('LandingController');
 
     }
 })();
