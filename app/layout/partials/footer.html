@@ -1,34 +1,21 @@
 <footer class="md-whiteframe-14dp" layout-padding layout="row" layout-align="space-between center" flex="none" md-colors="{color: 'deep-orange', 'background': 'grey-A200'}">
     <div flex="66" layout="row" layout-align="center">
         <md-list>
-            <md-list-item class="md-line">
-                <md-icon aria-label="mail">
-                    <a href="mailto:atiqul.islam1589@gmail.com">
-                        <ng-md-icon icon="email" style="fill:red"></ng-md-icon>
+            <md-list-item ng-repeat="contact in layCtrl.User.contactInfos">
+                <md-icon aria-label="{{contact.name}}">
+                    <a href="{{contact.info}}">
+                        <ng-md-icon icon="{{contact.icon}}" style="fill:red"></ng-md-icon>
                     </a>
                 </md-icon>
                 <div class="md-list-item-text">
-                    <md-button href="mailto:atiqul.islam1589@gmail.com">atiqul.islam1589@gmail.com</md-button>
-                </div>
-            </md-list-item>
-            <md-list-item>
-                <md-icon aria-label="mail">
-                    <a href="mailto:atiqul.islam1589@gmail.com">
-                        <ng-md-icon icon="phone" style="fill:red"></ng-md-icon>
-                    </a>
-                </md-icon>
-                <div class="md-list-item-text">
-                    <md-button href="tel:+8801675392131">+880 1675 39 2131 </md-button>
+                    <md-button href="{{contact.info}}">{{contact.display}}</md-button>
                 </div>
             </md-list-item>
         </md-list>
     </div>
     <div flex="33">
-        <a href="//github.com/atiq1589" target="_blank">
-            <ng-md-icon icon="github-circle" style="fill: red" size="28"></ng-md-icon>
-        </a>
-        <a href="//bd.linkedin.com/in/atiq1589" target="_blank">
-            <ng-md-icon icon="linkedin" style="fill: red" size="28"></ng-md-icon>
+        <a href="{{social.url}}" target="_blank" ng-repeat="social in layCtrl.User.socialLinks">
+            <ng-md-icon icon="{{social.logo}}" style="fill: red" size="28"></ng-md-icon>
         </a>
     </div>
 
