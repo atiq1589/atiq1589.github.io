@@ -24,8 +24,14 @@
             url: 'home.resume',
             ariaLabel: 'Resume'
         }]
-        vm.myGitRepos = [];
 
         vm.footerUrl = 'app/layout/partials/footer.html';
+        vm.headerUrl = 'app/layout/partials/header.html';
+
+        vm.User = {
+            name: 'md atiqul islam',
+            avatar: '/img/avatar.jpg'
+        }
+       
     }
 })();
