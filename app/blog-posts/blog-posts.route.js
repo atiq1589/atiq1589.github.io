@@ -8,7 +8,7 @@
                 .state('home.blogPosts', {
                     url: "blog-posts",
                     templateUrl: "app/blog-posts/list.html",
-                    controller: 'BlogPostsController',
+                    controller: 'PostsController',
                     controllerAs: 'postListCtrl',
                     resolve: {
                         nav: ['$rootScope', function ($rootScope) {
