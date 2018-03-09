@@ -11,7 +11,16 @@
         var list = $resource('/data/posts.json');
 
         return {
-            list: list
+            list: list,
+            get: function(slug){
+                var obj = {};
+                var list = this.list.query(function(){
+                    obj = list.find(function(e){
+                        return e.slug === slug;
+                    });
+                });
+                return obj;
+            }
         }
     }
 })();

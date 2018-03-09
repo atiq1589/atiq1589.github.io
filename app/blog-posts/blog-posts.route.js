@@ -16,6 +16,17 @@
                         }]
                     }
                 })
+                .state('home.blogPostDetail', {
+                    url: "post/{slug}",
+                    templateUrl: "app/blog-posts/details.html",
+                    controller: 'PostDetailController',
+                    controllerAs: 'postDetailCtrl',
+                    resolve: {
+                        nav: ['$rootScope', function ($rootScope) {
+                            $rootScope.currentNavItem = 'BlogPost'
+                        }]
+                    }
+                })
         }).run(['$rootScope', function ($rootScope) {
             if (!$rootScope.NavMenuList || $rootScope.NavMenuList.length == 0)
                 $rootScope.NavMenuList = [];

@@ -11,7 +11,7 @@
     <md-list flex ng-init="page=0">
         <md-list-item class="md-2-line" ng-repeat="post in postListCtrl.Posts | limitTo:pageLimit:pageLimit*page">
             <div class="md-list-item-text" ng-init="fabIsOpen=false" layout="column" layout-padding>
-                <h3>{{post.title | uppercase}}</h3>
+                <h3><a href="#/post/{{post.slug}}">{{post.title | uppercase}}</a></h3>
                 <p>{{post.short_description}}</p>
 
                 <!-- <md-fab-speed-dial md-open="fabIsOpen" md-direction="left" class="md-scale md-secondary">
