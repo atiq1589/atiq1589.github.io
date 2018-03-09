@@ -1,20 +1,19 @@
 <div class="" layout="column" layout-align="start">
     <md-toolbar md-colors="ThemeColor.ListToolBarColor">
         <div class="md-toolbar-tools">
-            <span>Git repo</span>
+            <span>Project</span>
             <span flex></span>
-            <md-button id="nextButton" class="md-raised" aria-label="button-label" ng-disabled="page == 0" ng-click="page = (page > 0)? page - 1: 0">
-                Prev </md-button>
-            <md-button id="nextButton" class="md-raised" aria-label="button-label" ng-disabled="((page + 1) * pageLimit) >=repoCtrl.userRepoList.length"
-                ng-click="page = ((page + 1) * pageLimit <repoCtrl.userRepoList.length)? page + 1: page">
+            <md-button id="nextButton" class="md-raised" aria-label="button-label" ng-disabled="page == 0" ng-click="page = (page > 0)? page - 1: 0" > Prev </md-button>
+            <md-button id="nextButton" class="md-raised" aria-label="button-label" ng-disabled="((page + 1) * pageLimit) >= proListCtrl.Projects.length" ng-click="page = ((page + 1) * pageLimit < proListCtrl.Projects.length)? page + 1: page">
                 Next </md-button>
         </div>
     </md-toolbar>
     <md-list flex ng-init="page=0">
-        <md-list-item class="md-2-line" ng-repeat="repoItem in repoCtrl.userRepoList | limitTo:pageLimit:pageLimit*page">
+        <md-list-item class="md-2-line" ng-repeat="project in proListCtrl.Projects | limitTo:pageLimit:pageLimit*page">
             <div class="md-list-item-text" ng-init="fabIsOpen=false" layout="column" layout-padding>
-                <h3>{{repoItem.name | uppercase}}</h3>
-                <p>{{repoItem.description}}</p>
+                <h3>{{project.name | uppercase}}</h3>
+                <p>{{project.description}}</p>
+
                 <md-fab-speed-dial md-open="fabIsOpen" md-direction="left" class="md-scale md-secondary">
                     <md-fab-trigger>
                         <md-button aria-label="menu" class="md-fab" md-colors="{{ThemeColor.FabButtonColor}}">
@@ -23,9 +22,8 @@
                     </md-fab-trigger>
 
                     <md-fab-actions>
-                        <md-button aria-label="Add User" class="md-fab md-raised md-mini" md-colors="{{ThemeColor.FabChildColor}}" href="{{repoItem.html_url}}"
-                            target="_blank">
-                            <md-icon>info</md-icon>
+                        <md-button aria-label="Add User" class="md-fab md-raised md-mini" md-colors="{{ThemeColor.FabChildColor}}">
+                            <md-icon md-colors="{{ThemeColor.FabChildIconColor}}"> info </md-icon>
                         </md-button>
                     </md-fab-actions>
                 </md-fab-speed-dial>
