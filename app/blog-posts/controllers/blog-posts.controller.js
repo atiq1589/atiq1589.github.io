@@ -4,10 +4,14 @@
         .module('blogApp')
         .controller('PostsController', PostsController);
 
-    PostsController.$inject = ['PostsService'];
+    PostsController.$inject = ['PostsService', '$state'];
 
-    function PostsController(PostsService) {
+    function PostsController(PostsService, $state) {
         var self = this;
         self.Posts = PostsService.list.query();
+
+        self.go = function(slug){
+            $state.go('home.blogPostDetail', {slug: slug});
+        }
     }
 })();

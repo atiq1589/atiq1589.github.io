@@ -4,29 +4,15 @@
             <span>Posts</span>
             <span flex></span>
             <md-button id="nextButton" class="md-raised" aria-label="button-label" ng-disabled="page == 0" ng-click="page = (page > 0)? page - 1: 0" > Prev </md-button>
-            <md-button id="nextButton" class="md-raised" aria-label="button-label" ng-disabled="((page + 1) * pageLimit) >= postListCtrl.Projects.length" ng-click="page = ((page + 1) * pageLimit < postListCtrl.Projects.length)? page + 1: page">
+            <md-button id="nextButton" class="md-raised" ng-disabled="((page + 1) * pageLimit) >= postListCtrl.Posts.length" aria-label="button-label" ng-disabled="((page + 1) * pageLimit) >= postListCtrl.Projects.length" ng-click="page = ((page + 1) * pageLimit < postListCtrl.Projects.length)? page + 1: page">
                 Next </md-button>
         </div>
     </md-toolbar>
     <md-list flex ng-init="page=0">
-        <md-list-item class="md-2-line" ng-repeat="post in postListCtrl.Posts | limitTo:pageLimit:pageLimit*page">
+        <md-list-item class="md-2-line" ng-repeat="post in postListCtrl.Posts | limitTo:pageLimit:pageLimit*page" ng-click="postListCtrl.go(post.slug)">
             <div class="md-list-item-text" ng-init="fabIsOpen=false" layout="column" layout-padding>
-                <h3><a href="#/post/{{post.slug}}">{{post.title | uppercase}}</a></h3>
+                <h3>{{post.title | uppercase}}</h3>
                 <p>{{post.short_description}}</p>
-
-                <!-- <md-fab-speed-dial md-open="fabIsOpen" md-direction="left" class="md-scale md-secondary">
-                    <md-fab-trigger>
-                        <md-button aria-label="menu" class="md-fab" md-colors="{{ThemeColor.FabButtonColor}}">
-                            <md-icon>menu</md-icon>
-                        </md-button>
-                    </md-fab-trigger>
-
-                    <md-fab-actions>
-                        <md-button aria-label="Add User" class="md-fab md-raised md-mini" md-colors="{{ThemeColor.FabChildColor}}">
-                            <md-icon md-colors="{{ThemeColor.FabChildIconColor}}"> info </md-icon>
-                        </md-button>
-                    </md-fab-actions>
-                </md-fab-speed-dial> -->
             </div>
             <md-divider></md-divider>
         </md-list-item>
